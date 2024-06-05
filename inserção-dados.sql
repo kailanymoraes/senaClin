@@ -15,7 +15,7 @@ INSERT INTO paciente VALUES
 	
 	SELECT * FROM dentista
 	
-/*exercico 3: Inserir 4 dentistas de forma explícita, sendo 1 de cada especialidade; */	
+/*exercicio 3: Inserir 4 dentistas de forma explícita, sendo 1 de cada especialidade; */	
 INSERT INTO dentista (nome, cro, especialidade, telefone, celular) VALUES
 	('Alexandre Abraão', 'SP-15672', 'Geral', '11996912725', '11996912557'),
 	('Rita Jones', 'SP-37205', 'Ortodontia', '11998017625', '11986912730'),
@@ -24,9 +24,19 @@ INSERT INTO dentista (nome, cro, especialidade, telefone, celular) VALUES
 	
 	
 	SELECT * FROM consulta
-/*exercico 4: Inserir 3 consultas, sendo 1 para o dentista que cuida de Ortodontia e 2 para o dentista
+/*exercicio 4: Inserir 3 consultas, sendo 1 para o dentista que cuida de Ortodontia e 2 para o dentista
 cuja especialidade é Geral. O tipo de todas elas será Avaliação. */
 INSERT INTO consulta (dataconsulta, horaconsulta, tipoconsulta, iddentista, idpaciente, observacao) VALUES
 	('24-10-08', '19:30', 'avaliação', '2', '5', ''),
 	('24-06-11', '14:15', 'avaliação', '1', '1', 'muita dor no siso esquerdo'),
 	('24-04-10', '17:00', 'avaliação', '2', '6', '')
+	
+
+/*exercicio 5: Atualizar todos os dados, exceto nome e cro, do dentista que cuida de implantodontia, mudando sua especialidade para Geral;*/
+SELECT * FROM dentista;
+ 
+UPDATE dentista SET telefone='32359864',celular='13996024853',especialidade='Geral' 
+WHERE especialidade='Implantodontia';
+
+
+/*exercicio 6: Atualizar a data e hora de uma consulta marcada com um dentista cuja especialidade é Geral*/
