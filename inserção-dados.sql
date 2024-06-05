@@ -13,5 +13,12 @@ INSERT INTO paciente VALUES
 	('6','Mariana Ribeiro', '34706385682', 'rua', 'alfredo ximenes', '1020', '', '13985673580', 'Santos')
 	
 	
-
+	SELECT * FROM dentista
+	
+/*exercico 3: Inserir 4 dentistas de forma explícita, sendo 1 de cada especialidade; */	
+INSERT INTO dentista (nome, cro, especialidade, telefone, celular) VALUES
+	('Alexandre Abraão', 'SP-15672', 'Geral', '11996912725', '11996912557'),
+	('Rita Jones', 'SP-37205', 'Ortodontia', '11998017625', '11986912730'),
+	('Jorge Benj', 'RJ-59806', 'Implantodontia', '21389056913', '21389673513'),
+	('Joaquim Machado', 'RJ-69082', 'Periodontia', '21289056952', '21329058552')
 	
