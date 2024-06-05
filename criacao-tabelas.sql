@@ -32,5 +32,11 @@ CONSTRAINT fk_consulta_dentista FOREIGN KEY (idDentista) REFERENCES dentista(idD
 );
 
 
-
+/*exercicio 1: Adicionar à tabela Paciente um novo atributo, chamado Cidade;*/
 ALTER TABLE paciente ADD COLUMN cidade VARCHAR(30) NOT NULL 
+
+ALTER TABLE dentista DROP COLUMN especialidade;
+ALTER TABLE dentista ADD COLUMN especialidade VARCHAR(100) DEFAULT 'Geral' 
+CHECK (especialidade='Ortodontia' OR especialidade='Geral' OR 
+especialidade='Periodontia' OR especialidade='Implantodontia');
+
