@@ -68,6 +68,13 @@ SELECT dentista.nome,consulta.dataConsulta,consulta.tipoConsulta FROM dentista
 LEFT JOIN consulta
 ON consulta.idDentista = dentista.idDentista
 
+/*exercicio 11: Criar uma query que exiba a quantidade de dentistas que a clínica possui, agrupando-os por especialidade, 
+ordenando pelo nome da especialidade de A-Z. Para isto, você utilizará o comando group by do sql.*/
+ SELECT COUNT(iddentista) AS 'quant. dentistas', especialidade FROM dentista
+ GROUP BY especialidade ORDER BY especialidade ASC 
+
+
+
 
 
 
