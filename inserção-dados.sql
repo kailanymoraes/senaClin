@@ -79,11 +79,12 @@ Escolher um mês que retorne ao menos uma consulta, e incluir o mês como filtro
  WHERE MONTH(dataconsulta)='10'  
 
 
+/*exercicio 13: Criar uma query que traga todos os tipos de consulta, agrupadas pela quantidade*/
+ SELECT COUNT(tipoconsulta) AS 'quant consulta',tipoconsulta FROM consulta GROUP BY tipoconsulta
 
 
-
-
-
+/*exercicio 14: Criar uma query que traga o número de pacientes que a clínica possui.*/
+SELECT COUNT(nome) AS 'quant paciente' FROM paciente
 
 
 
