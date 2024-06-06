@@ -111,12 +111,11 @@ CREATE VIEW quantTipos AS
  
 SELECT * FROM quantTipos;
 
-
-
-
-
-
-
+/*Desafio - Criar uma query que traga quantas consultas cada um dos dentistas realizou ao longo de todo o período,  
+ordenando as do que atendeu mais pacientes para o que atendeu menos.*/  
+SELECT COUNT(idconsulta)AS 'quant consultas'  , dentista.nome  FROM consulta 
+RIGHT JOIN dentista ON consulta.idDentista=dentista.idDentista
+GROUP BY dentista.nome ORDER BY COUNT(idconsulta) DESC 
 
 
 
