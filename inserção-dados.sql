@@ -87,6 +87,8 @@ Escolher um mês que retorne ao menos uma consulta, e incluir o mês como filtro
 SELECT COUNT(nome) AS 'quant paciente' FROM paciente
 
 
-
+/*exercicio 15: Criar uma query que traga todas as consultas da especialidade implantodontia. Deve vir na query o
+ nome do dentista, o cro, a data da consulta e o nome do paciente, ordenados da data mais atual para a mais antiga.*/ 
+SELECT COUNT(iddentista), nome, cro FROM dentista WHERE especialidade='implantodontia'
 
 
