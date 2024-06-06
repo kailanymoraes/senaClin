@@ -84,11 +84,14 @@ Escolher um mês que retorne ao menos uma consulta, e incluir o mês como filtro
 
 
 /*exercicio 14: Criar uma query que traga o número de pacientes que a clínica possui.*/
-SELECT COUNT(nome) AS 'quant paciente' FROM paciente
+ SELECT COUNT(nome) AS 'quant paciente' FROM paciente
 
 
 /*exercicio 15: Criar uma query que traga todas as consultas da especialidade implantodontia. Deve vir na query o
  nome do dentista, o cro, a data da consulta e o nome do paciente, ordenados da data mais atual para a mais antiga.*/ 
-SELECT COUNT(iddentista), nome, cro FROM dentista WHERE especialidade='implantodontia'
+SELECT dentista.nome, cro, dataConsulta, paciente.nome FROM consulta 
+INNER JOIN dentista ON consulta.idDentista=dentista.idDentista
+INNER JOIN paciente ON consulta.idPaciente=paciente.idPaciente
+WHERE especialidade='implantodontia' ORDER BY dataConsulta ASC;
 
 
