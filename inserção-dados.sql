@@ -55,8 +55,8 @@ Prioridade: Moderada. Remédio aplicado: Ponstan, caso sinta dores'
 WHERE idpaciente='6'
 
 /*exercicio 8: Selecionar nome e telefone de todo os pacientes que residem em Santos, em ordem alfabética; */
-SELECT nome, telefone FROM paciente 
-WHERE cidade='Santos' ORDER BY nome ASC 
+ SELECT nome, telefone FROM paciente 
+ WHERE cidade='Santos' ORDER BY nome ASC 
 
 /*exercicio 9: Selecionar o nome dos dentistas, a datas da consulta, o nome do paciente e seu telefone, APENAS dos dentistas que possuem consultas;*/
  SELECT dataconsulta, dentista.nome, paciente.nome, paciente.telefone FROM consulta 
@@ -64,16 +64,19 @@ WHERE cidade='Santos' ORDER BY nome ASC
  INNER JOIN paciente ON consulta.idPaciente=paciente.idPaciente
 
 /*exercicio 10: Selecionar o nome do dentista, a data da consulta e o tipo da consulta, MESMO quando os dentistas não possuam consultas;*/
-SELECT dentista.nome,consulta.dataConsulta,consulta.tipoConsulta FROM dentista
-LEFT JOIN consulta
-ON consulta.idDentista = dentista.idDentista
+ SELECT dentista.nome,consulta.dataConsulta,consulta.tipoConsulta FROM dentista
+ LEFT JOIN consulta
+ ON consulta.idDentista = dentista.idDentista
 
 /*exercicio 11: Criar uma query que exiba a quantidade de dentistas que a clínica possui, agrupando-os por especialidade, 
 ordenando pelo nome da especialidade de A-Z. Para isto, você utilizará o comando group by do sql.*/
  SELECT COUNT(iddentista) AS 'quant. dentistas', especialidade FROM dentista
  GROUP BY especialidade ORDER BY especialidade ASC 
 
-
+/*exercicio 12: Criar uma query que mostre a quantidade de consultas que a clínica possui em determinado período do ano. 
+Escolher um mês que retorne ao menos uma consulta, e incluir o mês como filtro. */
+ SELECT COUNT(Dataconsulta) AS 'consultas de novembro' FROM consulta
+ WHERE MONTH(dataconsulta)='10'  
 
 
 
