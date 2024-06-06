@@ -63,9 +63,10 @@ WHERE cidade='Santos' ORDER BY nome ASC
  INNER JOIN dentista ON consulta.idDentista=dentista.idDentista
  INNER JOIN paciente ON consulta.idPaciente=paciente.idPaciente
 
-
-
-
+/*exercicio 10: Selecionar o nome do dentista, a data da consulta e o tipo da consulta, MESMO quando os dentistas não possuam consultas;*/
+SELECT dentista.nome,consulta.dataConsulta,consulta.tipoConsulta FROM dentista
+LEFT JOIN consulta
+ON consulta.idDentista = dentista.idDentista
 
 
 
