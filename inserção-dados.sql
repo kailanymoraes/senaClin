@@ -54,8 +54,12 @@ UPDATE consulta SET tipoconsulta='tratamento', observacao='Tratamento será real
 Prioridade: Moderada. Remédio aplicado: Ponstan, caso sinta dores' 
 WHERE idpaciente='6'
 
+/*exercicio 8: Selecionar nome e telefone de todo os pacientes que residem em Santos, em ordem alfabética; */
+SELECT nome, telefone FROM paciente 
+WHERE cidade='Santos' ORDER BY nome ASC 
 
 
+ 
 
 
 
