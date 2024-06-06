@@ -58,8 +58,10 @@ WHERE idpaciente='6'
 SELECT nome, telefone FROM paciente 
 WHERE cidade='Santos' ORDER BY nome ASC 
 
-
- 
+/*exercicio 9: Selecionar o nome dos dentistas, a datas da consulta, o nome do paciente e seu telefone, APENAS dos dentistas que possuem consultas;*/
+ SELECT dataconsulta, dentista.nome, paciente.nome, paciente.telefone FROM consulta 
+ INNER JOIN dentista ON consulta.idDentista=dentista.idDentista
+ INNER JOIN paciente ON consulta.idPaciente=paciente.idPaciente
 
 
 
